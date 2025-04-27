@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Import Students from CSV</h2>
+    <p class="text-muted">Upload a CSV file with student data. The file should have two columns: Name and Student ID.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="mt-4">
+        <div class="mb-3">
+            <label for="file" class="form-label">CSV File</label>
+            <input type="file" class="form-control" id="file" name="file" accept=".csv" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Import Students</button>
+    </form>
+
+    <div class="mt-4">
+        <h4>CSV Format Example:</h4>
+        <pre class="bg-dark text-light p-3 rounded">
+Name,Student ID
+"SMITH, JOHN DOE",20220001
+"DOE, JANE SMITH",20220002</pre>
+    </div>
+</div>
+{% endblock %}
